@@ -7,7 +7,7 @@
 		"test": "jest",
 		"ios": "react-native run-ios",
 		"iosx": "react-native run-iosx",
-		"build": "react-native bundle --entry-file index.js --bundle-output ./ios/bundle/index.ios.bundle --platform ios --assets-dest ./ios/bundle --dev false"
+		"build": "rm -rf bundle && mkdir bundle && react-native bundle --entry-file index.js --bundle-output ./bundle/index.android.bundle --platform android --assets-dest ./bundle --dev false && react-native bundle --entry-file index.js --bundle-output ./bundle/index.ios.bundle --platform ios --assets-dest ./bundle --dev false "
 	},
 	"dependencies": {
 		"eslint": "^5.15.0",
