@@ -15,11 +15,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
+ 
+  // 获取应用沙盒根目录
+//  NSString * jsBundlePath = NSHomeDirectory();
+//  NSLog(@"sanbox root path = %@",jsBundlePath);
+  // 调整过的加载路径，设置从 沙盒根目录/bundles/index.ios.bundle 加载文件
+  
+//  jsCodeLocation = [NSURL URLWithString:[jsBundlePath stringByAppendingString:@"/bundles/index.ios.bundle"]];
+  
+//  NSLog(@"new jsCodeLocation= %@",jsCodeLocation);
+//  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"/index.ios" withExtension:@"jsbundle"];
+    jsCodeLocation = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"index.ios.bundle" ofType:nil]];;
 
+//jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"app"
+                                                      moduleName:@"dofeel"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
