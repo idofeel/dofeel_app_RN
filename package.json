@@ -12,7 +12,7 @@
 	"dependencies": {
 		"eslint": "^5.15.0",
 		"react": "16.6.1",
-		"react-native": "0.57.7",
+		"react-native": "0.70.2",
 		"react-native-gesture-handler": "^1.0.17",
 		"react-navigation": "^3.3.2"
 	},
